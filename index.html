@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Histórica - Paraguay</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Trivia Histórica</h1>
+        <h2>Paraguay Independiente</h2>
+
+        <!-- Pantalla de Selección -->
+        <div id="selection-screen" class="screen active">
+             <h3>Elige cómo jugar:</h3>
+            <div class="selection-controls">
+                <div class="control-group">
+                    <label for="topic-select">Tema:</label>
+                    <select id="topic-select" class="minecraft-select">
+                        <option value="all">Todos los Temas</option>
+                        <option value="1">Tema 1: Causas Independencia</option>
+                        <option value="2">Tema 2: Albores Revolución</option>
+                        <option value="3">Tema 3: Próceres</option>
+                        <option value="4">Tema 4: Primeros Gobiernos</option>
+                        <option value="5">Tema 5: Gobiernos Dr. Francia</option>
+                         <option value="6">Tema 6: Transición Post-Francia</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="difficulty-select">Dificultad:</label>
+                    <select id="difficulty-select" class="minecraft-select">
+                        <option value="all">Todos los Niveles</option>
+                        <option value="básico">Básico</option>
+                        <option value="intermedio">Intermedio</option>
+                        <option value="avanzado">Avanzado</option>
+                    </select>
+                </div>
+            </div>
+            <button id="start-button" class="minecraft-button">¡Empezar Aventura!</button>
+             <p id="start-error" class="error-message"></p>
+        </div>
+
+        <!-- Pantalla de Juego -->
+        <div id="game-screen" class="screen">
+             <div id="hud">
+                 <span id="question-counter">Pregunta X de Y</span>
+                 <span id="score">Puntaje: 0</span>
+            </div>
+            <div id="question-container" class="question-block">
+                <p id="question-text">Aquí va la pregunta...</p>
+            </div>
+            <div id="options-container" class="options-block">
+                <!-- Los botones de opciones se generan aquí -->
+            </div>
+            <div id="feedback" class="feedback-block"></div>
+            <button id="next-button" class="minecraft-button">Siguiente Bloque</button>
+        </div>
+
+        <!-- Pantalla Final -->
+        <div id="end-screen" class="screen">
+            <h2>¡Aventura Completada!</h2>
+            <p id="final-score">Tu puntaje final es: X</p>
+            <p id="final-message">¡Sigue explorando la historia!</p>
+            <button id="play-again-button" class="minecraft-button">Jugar de Nuevo</button>
+        </div>
+    </div>
+
+    <!-- Elementos de Audio -->
+    <!-- IMPORTANTE: Asegúrate de que la carpeta 'sounds' está AL MISMO NIVEL que este index.html -->
+    <!-- y que los nombres de archivo coinciden EXACTAMENTE (incluyendo .wav y .mp3) -->
+    <audio id="correct-sound" src="sounds/correct.wav" preload="auto"></audio>
+    <audio id="incorrect-sound" src="sounds/incorrect.wav" preload="auto"></audio>
+    <audio id="good-score-sound" src="sounds/fanfare.mp3" preload="auto"></audio>
+    <audio id="background-music" src="sounds/background_music.mp3" preload="auto" loop></audio>
+    <!-- Fin Elementos de Audio -->
+
+    <script src="script.js"></script>
+</body>
+</html>
